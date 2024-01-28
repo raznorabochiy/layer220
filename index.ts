@@ -17,7 +17,7 @@ const keys = await loadKeys();
 const provider = new JsonRpcProvider(RPC_URLS[FROM_NETWORK]);
 
 if (FROM_NETWORK === TO_NETWORK) {
-  console.log("FROM_NETWORK и TO_NETWORK не должны совпадать");
+  throw new Error("FROM_NETWORK и TO_NETWORK не должны совпадать");
 }
 
 async function mint(key: string) {
